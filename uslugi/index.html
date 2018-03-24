@@ -24,6 +24,17 @@
 
   gtag('config', 'UA-114027471-1');
 </script>
+<script>
+ * Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}   
+</script>   
 
 <meta charset="UTF-8" />
 <title>
@@ -70,7 +81,75 @@ img.emoji {
     bottom: 8px;
     left: 16px;
 }
+
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+
+    
 
 <link rel='stylesheet' id='wordpress-language-css'  href='../wp-content/plugins/wordpress-language/res/css/style1576.css?ver=1.2.1' type='text/css' media='all' />
 <link rel='stylesheet' id='style-css'  href='../wp-content/themes/catch-everest/style341d.css?ver=4.8.5' type='text/css' media='all' />
@@ -126,14 +205,19 @@ body.custom-background { background-color: #ffffff; }
              
         </div><!-- #hgroup-wrap -->
         
-        	<div id="header-menu">
+        	<!--<div id="header-menu">
         <nav id="access" role="navigation">
             <h2 class="assistive-text">Главное меню</h2>
             <div class="assistive-text skip-link"><a href="#content" title="Перейти к содержанию">Перейти к содержанию</a></div>
-            <div class="menu-header-container"><ul class="menu"><li id="menu-item-145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-145"><a href="../index.html">Главная</a></li>
-<li id="menu-item-153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-153"><a href="../byuro-sudebnyh-ekspertiz-provedenie-sudebnoy-ekspertizy-v-tyumeni/index.html">О компании</a>
+            <div class="menu-header-container">
+            <ul class="menu"><li id="menu-item-145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-145">
+            <a href="../index.html">Главная</a></li>
+<li id="menu-item-153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-153">
+<a href="../byuro-sudebnyh-ekspertiz-provedenie-sudebnoy-ekspertizy-v-tyumeni/index.html">О компании</a>
 <ul  class="sub-menu">
-	<li id="menu-item-193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193"><a href="../vakansii/index.html">Вакансии</a></li>
+	<li id="menu-item-193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193">
+	<a href="../vakansii/index.html">Вакансии</a>
+	</li>
 </ul>
 </li>
 <li id="menu-item-148" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-has-children menu-item-148"><a href="index.html">Услуги</a>
@@ -171,8 +255,77 @@ body.custom-background { background-color: #ffffff; }
 <li id="menu-item-463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="../sudebnaya-ekspertiza/index.html">Судебная экспертиза</a></li>
 <li id="menu-item-154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-154"><a href="../kontakty/index.html">Контакты</a></li>
 <li class="default-menu"><a href="../index.html" title="Menu">Меню</a></li></ul></div> 	         
-        </nav><!-- .site-navigation .main-navigation -->  
-	</div>
+        </nav><!-- .site-navigation .main-navigation   
+	</div>-->
+    
+<div class="navbar" id="myTopnav">
+	<a href="../index.html">Главная</a>
+	<!--<a href="../byuro-sudebnyh-ekspertiz-provedenie-sudebnoy-ekspertizy-v-tyumeni/index.html">О компании</a>-->
+	<div class="dropdown">
+    <button class="dropbtn">О компании 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../vakansii/index.html">Вакансии</a>
+     </div>
+  	</div>
+<div class="dropdown">
+    <button class="dropbtn">Услуги 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/index.html">Строительно-техническая экспертиза</a>
+      <ul  class="sub-menu">
+		<li id="menu-item-441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441"><a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/ekspertiza-obemov-vypolnennyh-stroitelno-montajnyh-rabot/index.html">Экспертиза объемов выполненных строительно-монтажных работ</a></li>
+		<li id="menu-item-449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449"><a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/ekspertiza-okon/index.html">Экспертиза окон</a></li>
+		<li id="menu-item-467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-467"><a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/teplovizionnoe-obsledovanie/index.html">Тепловизионное обследование</a></li>
+	</ul>
+     </div>
+  	</div>
+  	
+  	
+
+<ul  class="sub-menu">
+	<li id="menu-item-152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-152">
+	<a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/index.html">Строительно-техническая экспертиза</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441"><a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/ekspertiza-obemov-vypolnennyh-stroitelno-montajnyh-rabot/index.html">Экспертиза объемов выполненных строительно-монтажных работ</a></li>
+		<li id="menu-item-449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449"><a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/ekspertiza-okon/index.html">Экспертиза окон</a></li>
+		<li id="menu-item-467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-467"><a href="../stroitelnaya-sudebno-tehnicheskaya-ekspertiza-zdaniy-v-tyumeni/teplovizionnoe-obsledovanie/index.html">Тепловизионное обследование</a></li>
+	</ul>
+</li>
+	<li id="menu-item-155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-155"><a href="../ocenka/index.html">Оценка</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151"><a href="../ocenka/nezavisimaya-ekspertiza-avtomobilya-ocenka-ushcherba-dtp-v-tyumeni/index.html">Автотехническая экспертиза</a></li>
+		<li id="menu-item-558" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-558"><a href="../ocenka/mashin-i-oborudovaniya/index.html">Оценка машин и оборудования</a></li>
+		<li id="menu-item-579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-579"><a href="../ocenka/kvartira/index.html">Оценка квартиры</a></li>
+		<li id="menu-item-580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-580"><a href="../ocenka/zemelnogo-uchastka/index.html">Оценка земельного участка</a></li>
+		<li id="menu-item-578" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-578"><a href="../ocenka/biznesa-i-predpriyatiy/index.html">Оценка бизнеса и предприятий</a></li>
+		<li id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585"><a href="../ocenka/cennyh-bumag/index.html">Оценка ценных бумаг</a></li>
+	</ul>
+</li>
+	<li id="menu-item-150" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-150"><a href="../ekspertiza-kachestva-tovara-v-tyumeni/index.html">Товарная экспертиза</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-457" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457"><a href="../ekspertiza-kachestva-tovara-v-tyumeni/ekspertiza-mebeli/index.html">Экспертиза мебели</a></li>
+		<li id="menu-item-470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-470"><a href="../ekspertiza-kachestva-tovara-v-tyumeni/ekspertiza-mehovyh-izdeliy/index.html">Экспертиза меховых изделий</a></li>
+		<li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="../ekspertiza-kachestva-tovara-v-tyumeni/ekspertiza-bytovoy-tehniki/index.html">Экспертиза бытовой техники</a></li>
+		<li id="menu-item-479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-479"><a href="../ekspertiza-kachestva-tovara-v-tyumeni/ekspertiza-yuvelirnyh-izdeliy/index.html">Экспертиза ювелирных изделий</a></li>
+		<li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476"><a href="../ekspertiza-kachestva-tovara-v-tyumeni/ekspertiza-kachestva/index.html">Экспертиза качества</a></li>
+	</ul>
+</li>
+	<li id="menu-item-437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-437"><a href="ekspertiza-pri-goszakupkah/index.html">Экспертиза при гос.закупках</a></li>
+	<li id="menu-item-590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-590"><a href="../pocherkovedcheskaya-ekspertiza/index.html">Почерковедческая экспертиза</a></li>
+</ul>
+</li>
+<li id="menu-item-463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="../sudebnaya-ekspertiza/index.html">Судебная экспертиза</a></li>
+<li id="menu-item-154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-154"><a href="../kontakty/index.html">Контакты</a></li>
+<li class="default-menu"><a href="../index.html" title="Menu">Меню</a></li></ul>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>    
+    
+
+    
+    
         
 	</header><!-- #masthead .site-header -->
     
